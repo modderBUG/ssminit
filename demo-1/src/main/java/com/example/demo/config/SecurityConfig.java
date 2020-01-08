@@ -36,17 +36,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     
    
     //認證！
-    @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+//     @Autowired
+//     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 
-      auth.inMemoryAuthentication()
-              .withUser("user").password("user").roles("USER")
-              .and()
-             .withUser("admin").password("admin").roles("ADMIN");
-      auth.jdbcAuthentication();
+//       auth.inMemoryAuthentication()
+//               .withUser("user").password("user").roles("USER")
+//               .and()
+//              .withUser("admin").password("admin").roles("ADMIN");
+//       auth.jdbcAuthentication();
 
-     // auth.authenticationProvider(custAuthenticationProvider);
+//      // auth.authenticationProvider(custAuthenticationProvider);
 
-    }
+//     }
 
 }
