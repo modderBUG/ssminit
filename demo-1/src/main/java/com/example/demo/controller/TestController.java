@@ -24,4 +24,9 @@ public class TestController {
         return new Test(counter.incrementAndGet(),
                             String.format(template, name));
     }
+	@RequestMapping("/test3")
+    public Test dealTest2(@RequestParam(value="name", defaultValue="test02分支") String name) {
+        return new Test(counter.incrementAndGet(),
+                            String.format(template, name));
+    }
 }
