@@ -16,7 +16,7 @@ public class UserController {
     private UserMapper userMapper;
 
     //选择全部用户
-    @GetMapping("/selectUser")
+    @GetMapping("/user")
     public String selectUser(){
         List<User> users = userMapper.selectUser();
         for (User user : users) {
@@ -27,7 +27,7 @@ public class UserController {
     }
     
   //选择全部用户
-    @GetMapping("/AllUser")
+    @GetMapping("/users")
     public List<User> AllUser(){
         List<User> users = userMapper.selectUser();
         for (User user : users) {
@@ -44,7 +44,7 @@ public class UserController {
         return "ok";
     }
     //添加一个用户
-    @GetMapping("/addUser")
+    @PostMapping("/user")
     public String addUser(){
         userMapper.addUser(new User(5,"阿毛","456789"));
         return "ok";
