@@ -13,6 +13,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+
+        
+
+    
+        http.authorizeRequests()
+        .antMatchers("/").permitAll()
+        .antMatchers("level1/**").hasRole("vip")
+        .antMatchers("level2/**").hasRole("vip3")
+        .antMatchers("level3/**").hasRole("vip2");
+        
         http.formLogin() // 表单登录。跳转到security默认的登录表单页
         // http.httpBasic() //basic登录
         .and()
@@ -24,12 +34,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         
         //添加這行否則德魯伊登不上
         http.csrf().ignoringAntMatchers("/druid/*");
-    
-        http.authorizeRequests()
-        .antMatchers("/").permitAll()
-        .antMatchers("level1/**").hasRole("vip")
-        .antMatchers("level2/**").hasRole("vip3")
-        .antMatchers("level3/**").hasRole("vip2");
     
     
     }
